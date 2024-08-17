@@ -32,7 +32,8 @@ Environnement..... OK
 Migration......... OK
 Serveur........... OK
 
-Django Admin : http://localhost:8000/admin/"
+Django Admin : http://localhost:8000/admin/
+GRAPHQL : http://localhost:8000/graphql/"
 
 
 # Attendre que le serveur Django se termine

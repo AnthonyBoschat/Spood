@@ -20,3 +20,7 @@ Installer les dépendance :
 		DB_PASSWORD=password
 		DB_HOST=172.31.215.127
 		DB_PORT=5432
+
+        appliquer les migrations : 
+
+        python manage.py migrate
