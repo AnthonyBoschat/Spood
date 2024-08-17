@@ -13,6 +13,17 @@ Installer les dépendance :
 		Activer le nouvel environnement virtuel : source env/bin/activate
 		Installer les dépendances : pip install -r requirements.txt
 
+
+	
+		
+
+        Créer une nouvelle base de donnée pour le projet :
+
+		psql -U postgres -h 172.31.215.127 -p 5432
+		CREATE DATABASE BDDname;
+
+
+
 		Initialiser un fichier .env a la racine de backend : 
 
 		DB_NAME=BDDname
@@ -21,6 +32,10 @@ Installer les dépendance :
 		DB_HOST=172.31.215.127
 		DB_PORT=5432
 
-        appliquer les migrations : 
 
-        python manage.py migrate
+
+
+		Créer un nouvel utilisateur pour accéder à djangoAdmin : 
+
+		source env/bin/activate
+		python manage.py createsuperuser
