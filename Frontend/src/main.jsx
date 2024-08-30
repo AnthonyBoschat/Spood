@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import client from "./appollo-client.js"
 import { Provider } from 'react-redux'
-import { store } from './Redux/store.js'
+import { store } from '@Redux/store.js'
 import { BrowserRouter } from 'react-router-dom'
 import { ApolloProvider } from '@apollo/client'
-import "./Sass/animation.scss"
-import "./Sass/constants.scss"
-import "./Sass/functions.scss"
+import "@Sass/animation.scss"
+import "@Sass/constants.scss"
+import "@Sass/functions.scss"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
