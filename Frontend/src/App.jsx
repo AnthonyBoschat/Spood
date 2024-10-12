@@ -1,11 +1,15 @@
+import Home from "@Pages/Home/Home";
+import { BrowserRouter as Routes, Route } from "react-router-dom";
 
 
 export default function App() {
 
   
   return (
-    <>
-      <h1>Hello</h1>
-    </>
+        
+    <Routes>
+      <Route path="/" element={<Home/>}></Route>
+    </Routes>
   )
 }
+
