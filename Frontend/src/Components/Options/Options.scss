@@ -1,0 +1,11 @@
+.Options{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+
+    .option{
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+    }
+}

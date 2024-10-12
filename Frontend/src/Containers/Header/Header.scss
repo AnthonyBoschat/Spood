@@ -19,11 +19,11 @@ header{
                 content: "";
                 left: 0;
                 bottom: 0;
-                height: 2px;
+                height: 1px;
                 border-radius: 50%;
                 background-color: black;
                 width: 0%;
-                animation: headerHover 0.2s linear forwards;
+                animation: headerHover 0.15s linear forwards;
             }
         }
     }
