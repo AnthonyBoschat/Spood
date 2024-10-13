@@ -1,6 +1,5 @@
 import { isDarkTheme } from "@Services/AppService"
 import "./Home.scss"
-import { Outlet } from "react-router-dom"
 
 export default function Home(){
 

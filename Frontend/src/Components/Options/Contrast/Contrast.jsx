@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import "./Contrast.scss"
 import { switchTheme } from "@Redux/Slices/AppSlice"
 import { isDarkTheme } from "@Services/AppService"

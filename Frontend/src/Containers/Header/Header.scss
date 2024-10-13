@@ -5,12 +5,7 @@ header{
     align-items: center;
     
     
-    &.darkTheme nav a{
-        color: var(--dark-text) !important;
-    }
-    &.darkTheme nav a:hover::after{
-        background-color: var(--dark-text);
-    }
+    
     
     nav{
         display: flex;
@@ -22,9 +17,30 @@ header{
             font-size: 1.2rem;
             font-family: var(--font-main);
             color: var(--light-text);
+
+            &.darkTheme{
+                color: var(--dark-text) !important;
+            }
+            &.darkTheme:hover::after{
+                background-color: var(--dark-text) !important;
+            }
+            
+            &.selected::after{
+                position: absolute;
+                content: "";
+                left: 0;
+                bottom: 0;
+                height: 1px;
+                border-radius: 50%;
+                background-color: black;
+                width: 100%;
+            }
+            &.darkTheme.selected::after{
+                background-color: var(--dark-text) !important;
+            }
             
 
-            &:hover::after{
+            &.unselected:hover::after{
                 position: absolute;
                 content: "";
                 left: 0;
