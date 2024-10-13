@@ -3,6 +3,15 @@ header{
     height: 100%;
     display: flex;
     align-items: center;
+    
+    
+    &.darkTheme nav a{
+        color: var(--dark-text) !important;
+    }
+    &.darkTheme nav a:hover::after{
+        background-color: var(--dark-text);
+    }
+    
     nav{
         display: flex;
         gap: 2rem;
@@ -10,9 +19,10 @@ header{
         a{
             position: relative;
             text-decoration: none;
-            color: black;
             font-size: 1.2rem;
             font-family: var(--font-main);
+            color: var(--light-text);
+            
 
             &:hover::after{
                 position: absolute;

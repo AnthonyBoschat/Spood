@@ -5,11 +5,11 @@ import { createSlice } from '@reduxjs/toolkit';
 export const appSlice = createSlice({
   name: 'app',
   initialState: {
-    theme:"light"
+    theme:true
   },
   reducers: {
     switchTheme:(state,action) => {
-        state.theme = state.theme === "light" ? "dark" : "light"
+        state.theme = !state.theme
     }
   },
 });

@@ -5,7 +5,18 @@
     align-items: center;
 
     .option{
+        
         margin-bottom: 1rem;
         font-size: 1.5rem;
+        border-radius: 50%;
+        
+        &.darkTheme{
+            transform: rotate(180deg);
+            color: var(--light-background);
+            opacity: 0.8;
+        }
+        &:hover{
+            cursor: pointer;
+        }
     }
 }
