@@ -6,12 +6,13 @@ import Options from "@Components/Options/Options";
 import { isDarkTheme } from "@Services/AppService";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
+import Nutrition from "@Pages/Nutrition/Nutrition";
 
 
 export default function App() {
 
   const theme = useSelector(store => store.app.theme)
-  const rootElement = document.getElementById("root");
+  
   useEffect(() => {
     const rootElement = document.getElementById("root");
     if(theme){
@@ -29,6 +30,7 @@ export default function App() {
           <Header/>
           <Routes>
             <Route path="/" element={<Home/>}></Route>
+            <Route path="/Nutrition" element={<Nutrition/>}></Route>
           </Routes>
         </div>
       </>
