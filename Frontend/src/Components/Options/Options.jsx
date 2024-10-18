@@ -1,4 +1,4 @@
-import Contrast from "./Contrast/Contrast"
+import Contrast from "./Components/Contrast"
 import "./Options.scss"
 
 export default function Options(){

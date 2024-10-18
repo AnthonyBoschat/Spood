@@ -16,13 +16,12 @@ export default function Header(){
     console.log(location)
 
     return(
-        <header className={`${darkTheme()} theme`}>
+        <header className={`${darkTheme()}`}>
             <nav>
                 {links.map(link => (
                     <Link 
                         key={link.id} 
                         className={`
-                            theme
                             ${link.to === location.pathname ? "selected" : "unselected"}
                             ${darkTheme()}`} 
                         to={link.to !== location.pathname ? link.to : link.comeback}

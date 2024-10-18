@@ -7,5 +7,5 @@ export function isDarkTheme(){
 
 // Génère la classe darkTheme
 export function darkTheme(){
-    return isDarkTheme() ? "darkTheme" : ""
+    return isDarkTheme() ? "darkTheme theme" : "theme"
 }
