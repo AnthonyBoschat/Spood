@@ -1,6 +1,6 @@
 import { Link, Navigate, useLocation } from "react-router-dom"
 import "./Header.scss"
-import { isDarkTheme } from "@Services/AppService"
+import { darkTheme } from "@Services/AppService"
 import { useState } from "react"
 
 export default function Header(){
@@ -16,7 +16,7 @@ export default function Header(){
     console.log(location)
 
     return(
-        <header className={`${isDarkTheme() ? "darkTheme" : ""} theme`}>
+        <header className={`${darkTheme()} theme`}>
             <nav>
                 {links.map(link => (
                     <Link 
@@ -24,7 +24,7 @@ export default function Header(){
                         className={`
                             theme
                             ${link.to === location.pathname ? "selected" : "unselected"}
-                            ${isDarkTheme() ? "darkTheme" : ""}`} 
+                            ${darkTheme()}`} 
                         to={link.to !== location.pathname ? link.to : link.comeback}
                     >
                         {link.name}
