@@ -1,0 +1,33 @@
+.container{
+    margin-top: 1rem;
+    margin-left: 2rem;
+    margin-right: 1rem;
+    display: flex;
+    gap: 5rem;
+
+    .column{
+        // outline: 1px solid red;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        button{
+            color: var(--module-text-color);
+            text-shadow: 1px 1px 2px black;
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+            opacity: 0.8;
+            font-size: 1rem;
+            
+            &:hover{
+                opacity: 1;
+            }
+
+            span{
+                text-wrap: nowrap;
+            }
+
+        }
+    }
+}

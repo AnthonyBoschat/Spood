@@ -1,0 +1,53 @@
+div.container{
+    // outline: 1px solid red; 
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1rem;
+    grid-template-areas:
+    "action action action action calendar calendar"
+    "ingredient ingredient recipe recipe recipe recipe"
+    "ingredient ingredient recipe recipe recipe recipe";
+
+
+    .module{
+        color: var(--module-text-color);
+        border-radius: 8px;
+        outline: 1px solid black;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        opacity: 0.9;
+        text-shadow: 1px 1px 2px black;
+
+        &:hover{
+            opacity: 1;
+        }
+        
+    }
+
+    .actions {
+        background-color: var(--module-background-medium);
+        grid-area: action;
+    }
+      
+    .calendar {
+        background-color: var(--module-background-dark);
+        grid-area: calendar;
+        &.darkTheme{
+            background-color: var(--module-background-light);
+        }
+    }
+    
+    .ingredient {
+        background-color: var(--module-background-dark);
+        grid-area: ingredient;
+        &.darkTheme{
+            background-color: var(--module-background-light);
+        }
+    }
+    
+    .recipe {
+        background-color: var(--module-background-medium);
+        grid-area: recipe;
+    }
+
+}
