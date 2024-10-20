@@ -1,3 +1,4 @@
+import { darkTheme } from "@Services/AppService"
 import "./Nutrition.scss"
 
 export default function Nutrition(){
@@ -10,11 +11,11 @@ export default function Nutrition(){
 
                 </div>
 
-                <div className="module calendar">
+                <div className={`module calendar ${darkTheme()}`}>
 
                 </div>
 
-                <div className="module ingredient-list">
+                <div className={`module ingredient-list ${darkTheme()}`}>
 
                 </div>
 

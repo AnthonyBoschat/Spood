@@ -28,5 +28,7 @@
 }
 
 .theme{
-    transition: all 0.3s linear;
+    transition: color 0.3s linear, 
+                background-color 0.3s linear,
+                fill 0.3s linear;
 }
