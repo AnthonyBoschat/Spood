@@ -9,14 +9,22 @@
         margin-bottom: 1rem;
         font-size: 1.5rem;
         border-radius: 50%;
+        opacity: 0.8;
+        transition: color 0.3s linear, 
+                    background-color 0.3s linear,
+                    fill 0.3s linear,
+                    transform 0.3s linear,
+                    opacity 0.3s linear;
         
         &.darkTheme{
             transform: rotate(180deg);
             color: var(--light-background);
             opacity: 0.8;
+            
         }
         &:hover{
             cursor: pointer;
+            opacity: 1;
         }
     }
 }

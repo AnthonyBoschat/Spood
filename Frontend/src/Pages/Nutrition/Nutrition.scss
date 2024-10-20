@@ -11,20 +11,18 @@ div.nutrition-container{
 
 
     .module{
+        color: var(--module-text-color);
         border-radius: 8px;
         outline: 1px solid black;
-        background-color: gray;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        transition: color 0.3s linear, 
-                    background-color 0.3s linear,
-                    fill 0.3s linear,
-                    transform 0.1s linear;
+        opacity: 0.9;
+        text-shadow: 1px 1px 2px black;
 
         &:hover{
+            opacity: 1;
             cursor: pointer;
-            transform: scale(100.5%);
-            outline: 2px solid black;
         }
+        
     }
 
     .action {
