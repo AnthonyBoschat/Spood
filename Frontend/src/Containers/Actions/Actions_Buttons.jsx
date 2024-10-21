@@ -63,7 +63,7 @@ export default function Actions_Buttons(){
             {actionsCategory.map(category => (
                 <div key={category.category} className={s.column}>
                     {category.actions.map(action => (
-                        <Button onClick={action.onClick} key={action.value}>
+                        <Button className={action.onClick ? "" : s.disabled} onClick={action.onClick} key={action.value}>
                             {action.icon}
                             <span>
                                 {action.value}

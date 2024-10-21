@@ -2,8 +2,10 @@
     margin-top: 1rem;
     margin-left: 2rem;
     margin-right: 1rem;
-    display: flex;
-    gap: 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    // gap: 5rem;
 
     .column{
         // outline: 1px solid red;
@@ -20,8 +22,12 @@
             opacity: 0.8;
             font-size: 1rem;
             
+            &.disabled{
+                cursor:not-allowed;
+            }
             &:hover{
                 opacity: 1;
+                
             }
 
             span{
