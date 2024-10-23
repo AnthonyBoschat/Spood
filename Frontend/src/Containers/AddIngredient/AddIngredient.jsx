@@ -1,44 +1,65 @@
+import { useState } from "react"
 import s from "./AddIngredient.module.scss"
 
 export default function AddIngredient(){
 
+    const [name, setName] = useState("")
+    const [calorie, setCalorie] = useState("")
+    const [weight, setWeight] = useState("")
+    const [protein, setProtein] = useState("")
+    const [lipid, setLipid] = useState("")
+    const [glucid, setGlucid] = useState("")
 
+    
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const payload = {
+            name,
+            calorie:parseFloat(calorie),
+            weight:parseFloat(weight),
+            protein:parseFloat(protein),
+            lipid:parseFloat(lipid),
+            glucid:parseFloat(glucid),
+        }
+        console.log(payload)
+    }
 
     return(
         <div className={s.container}>
 
-            <form action="">
+            <form onSubmit={handleSubmit} action="">
 
                 <div className={s.group}>
                     <div className={s.input}>
                         <label htmlFor="">Nom</label>
-                        <input required type="text" />
+                        <input value={name} onChange={(e) => setName(e.currentTarget.value)} required type="text" />
                     </div>
                 </div>
 
                 <div className={s.group}>
                     <div className={s.input}>
                         <label htmlFor="">Calorie</label>
-                        <input required type="number" />
+                        <input value={calorie} onChange={(e) => setCalorie(e.currentTarget.value)}  required type="number" step="any" />
                     </div>
                     <div className={s.input}>
                         <label htmlFor="">Poid</label>
-                        <input required type="number" />
+                        <input value={weight} onChange={(e) => setWeight(e.currentTarget.value)} required type="number" step="any" />
                     </div>
                 </div>
 
                 <div className={s.group}>
                     <div className={s.input}>
                         <label htmlFor="">Protéine</label>
-                        <input required className={s.protein} type="number" />
+                        <input value={protein} onChange={(e) => setProtein(e.currentTarget.value)} required className={s.protein} type="number" step="any" />
                     </div>
                     <div className={s.input}>
                         <label htmlFor="">Lipide</label>
-                        <input required className={s.lipid} type="number" />
+                        <input value={lipid} onChange={(e) => setLipid(e.currentTarget.value)} required className={s.lipid} type="number" step="any" />
                     </div>
                     <div className={s.input}>
                         <label htmlFor="">Glucide</label>
-                        <input required className={s.glucid} type="number" />
+                        <input value={glucid} onChange={(e) => setGlucid(e.currentTarget.value)} required className={s.glucid} type="number" step="any" />
                     </div>
                 </div>
                 
