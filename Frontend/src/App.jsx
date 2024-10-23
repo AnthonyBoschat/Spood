@@ -2,7 +2,7 @@ import Home from "@Pages/Home/Home";
 import { Routes, Route } from "react-router-dom";
 import './App.scss'
 import Header from "@Containers/Header/Header";
-import Options from "@Components/Options/Options";
+import Options from "@Containers/Options/Options";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import Nutrition from "@Pages/Nutrition/Nutrition";

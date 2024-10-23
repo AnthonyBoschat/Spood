@@ -13,8 +13,6 @@ export default function Header(){
         {id:1, name:"Sport", selected:false, to:"/Sport", comeback:"/"},
     ])
 
-    console.log(location)
-
     return(
         <header className={`${darkTheme()}`}>
             <nav>

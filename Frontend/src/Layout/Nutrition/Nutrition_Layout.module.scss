@@ -37,7 +37,7 @@ div.container{
     .calendar {
         background-color: var(--module-background-dark);
         grid-area: calendar;
-        &.darkTheme{
+        &:global(.darkTheme){
             background-color: var(--module-background-light);
         }
     }
@@ -45,7 +45,7 @@ div.container{
     .ingredient {
         background-color: var(--module-background-dark);
         grid-area: ingredient;
-        &.darkTheme{
+        &:global(.darkTheme){
             background-color: var(--module-background-light);
         }
     }
