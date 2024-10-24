@@ -1,6 +1,6 @@
 export default function Button({children, ...props}){
 
-
+    // Style
     const customStyle = {
         padding:"0",
     }
