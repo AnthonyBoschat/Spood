@@ -1,5 +1,7 @@
 import { useState } from "react"
 import s from "./AddIngredient.module.scss"
+import { useMutation } from "@apollo/client"
+import { CreateIngredient } from "@Query/Mutation/CreateIngredient"
 
 export default function AddIngredient(){
 
@@ -10,19 +12,33 @@ export default function AddIngredient(){
     const [lipid, setLipid] = useState("")
     const [glucid, setGlucid] = useState("")
 
-    
+    const [createIngredient, {data, loading, error}] = useMutation(CreateIngredient)
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        const payload = {
-            name,
-            calorie:parseFloat(calorie),
-            weight:parseFloat(weight),
-            protein:parseFloat(protein),
-            lipid:parseFloat(lipid),
-            glucid:parseFloat(glucid),
+        const newIngredient = {
+            variables:{
+                name,
+                calorie:parseFloat(calorie),
+                weight:parseFloat(weight),
+                protein:parseFloat(protein),
+                lipid:parseFloat(lipid),
+                glucid:parseFloat(glucid),
+            }
         }
-        console.log(payload)
+        createIngredient(newIngredient)
+        .then(result => {
+            const response = result.data.createIngredient
+            if(response.success){
+                console.log(response.message)
+                setName("")
+                setCalorie("")
+                setWeight("")
+                setProtein("")
+                setLipid("")
+                setGlucid("")
+            }
+        })
     }
 
     return(

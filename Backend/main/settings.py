@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'graphene_django',
     'corsheaders',
+    "Ingredient"
 ]
 
 CORS_ALLOWED_ORIGINS = [

@@ -1,10 +1,10 @@
-# import graphene
-# from exercices.schema import ExerciceQuery, ExerciceMutation
+import graphene
+from Ingredient.schema import IngredientMutation, ingredientQuery
 
-# class Query(ExerciceQuery, graphene.ObjectType):
-#     pass
+class Query(ingredientQuery, graphene.ObjectType):
+    pass
 
-# class Mutation(ExerciceMutation, graphene.ObjectType):
-#     pass
+class Mutation(IngredientMutation, graphene.ObjectType):
+    pass
 
-# schema = graphene.Schema(query=Query, mutation=Mutation)
+schema = graphene.Schema(query=Query, mutation=Mutation)

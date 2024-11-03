@@ -8,3 +8,6 @@ class Ingredient(models.Model):
     protein = models.DecimalField(max_digits=10, decimal_places=2, null=False, blank=False)
     lipid = models.DecimalField(max_digits=10, decimal_places=2, null=False, blank=False)
     glucid = models.DecimalField(max_digits=10, decimal_places=2, null=False, blank=False)
+    
+    def __str__(self):
+        return self.name
