@@ -3,10 +3,10 @@ import { Routes, Route } from "react-router-dom";
 import './App.scss'
 import Header from "@Containers/Header/Header";
 import Options from "@Containers/Options/Options";
-import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import Nutrition from "@Pages/Nutrition/Nutrition";
 import { darkTheme, isDarkTheme } from "@Services/AppService";
+import Popup from "@Components/Popup/Popup";
 
 
 export default function App() {
@@ -26,6 +26,7 @@ export default function App() {
   return (
       <>
         <Options/>
+        <Popup/>
         <div className={`Content ${darkTheme()}`}>
           <Header/>
           <Routes>

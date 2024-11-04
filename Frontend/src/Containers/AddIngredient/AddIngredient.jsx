@@ -2,8 +2,12 @@ import { useState } from "react"
 import s from "./AddIngredient.module.scss"
 import { useMutation } from "@apollo/client"
 import { CreateIngredient } from "@Query/Mutation/CreateIngredient"
+import { useDispatch } from "react-redux"
+import { addPopup, clearPopup } from "@Redux/Slices/PopupSlice"
 
 export default function AddIngredient(){
+
+    const dispatch = useDispatch()
 
     const [name, setName] = useState("")
     const [calorie, setCalorie] = useState("")
@@ -30,7 +34,6 @@ export default function AddIngredient(){
         .then(result => {
             const response = result.data.createIngredient
             if(response.success){
-                console.log(response.message)
                 setName("")
                 setCalorie("")
                 setWeight("")
@@ -38,6 +41,7 @@ export default function AddIngredient(){
                 setLipid("")
                 setGlucid("")
             }
+            dispatch(addPopup(response))
         })
     }
 

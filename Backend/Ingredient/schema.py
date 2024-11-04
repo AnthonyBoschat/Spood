@@ -26,20 +26,31 @@ class CreateIngredient(graphene.Mutation):
     ingredient = graphene.Field(IngredientType)
     success = graphene.Boolean()
     message = graphene.String()
-    error = graphene.String()
     
     def mutate(self, info, name, weight, calorie, protein, lipid, glucid):
-        ingredient = Ingredient(
-            name = name,
-            weight = weight,
-            calorie = calorie,
-            protein = protein,
-            lipid = lipid,
-            glucid = glucid,
-        )
-        ingredient.save()
-        message = f"{ingredient.name} ajouté avec succès."
-        return CreateIngredient(success=True, message=message, ingredient=ingredient )
+        error = False
+        ingredient = None
+        
+        try:
+            ingredient = Ingredient(
+                name = name,
+                weight = weight,
+                calorie = calorie,
+                protein = protein,
+                lipid = lipid,
+                glucid = glucid,
+            )
+            ingredient.save()
+        except:
+            error = True
+        
+        if error:
+            message = f"L'opération pour ajouter cet ingrédient a échoué."
+        else:
+            message = f"{ingredient.name} ajouté avec succès."
+
+            
+        return CreateIngredient(success=not error, message=message, ingredient=ingredient )
         
 class IngredientMutation(graphene.ObjectType):
     createIngredient = CreateIngredient.Field()
