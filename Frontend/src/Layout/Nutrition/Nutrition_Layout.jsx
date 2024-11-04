@@ -1,9 +1,11 @@
 import { darkTheme } from "@Services/AppService"
 import s from "./Nutrition_Layout.module.scss"
-import Actions_Buttons from "@Containers/Actions/Actions_Buttons"
-import Actions_Header from "@Containers/Actions/Actions_Header"
+import Actions_Buttons from "@Containers/Actions/Buttons/Actions_Buttons"
+import Actions_Header from "@Containers/Actions/Header/Actions_Header"
 import { useSelector } from "react-redux"
-import AddIngredient from "@Containers/AddIngredient/AddIngredient"
+import AddIngredient from "@Containers/Actions/AddIngredient/AddIngredient"
+import Ingredient_Header from "@Containers/Ingredients/Header/Ingredient_Header"
+import Ingredient_List from "@Containers/Ingredients/List/Ingredient_List"
 
 export default function Nutrition_Layout(){
 
@@ -24,7 +26,8 @@ export default function Nutrition_Layout(){
                 </div>
 
                 <div className={`${darkTheme()} ${s.module} ${s.ingredient} `}>
-                    Ingredient List
+                    <Ingredient_Header/>
+                    <Ingredient_List/>
                 </div>
                 <div className={`transition ${s.module} ${s.recipe}`}>
                     Recipe List

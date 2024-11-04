@@ -11,15 +11,16 @@ div.container{
 
 
     .module{
+        position: relative;
+        z-index: 1;
         color: var(--module-text-color);
         border-radius: 8px;
         outline: 1px solid black;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         opacity: 0.9;
-        text-shadow: 1px 1px 2px black;
+        // text-shadow: 1px 1px 2px black;
         display: grid;
-        grid-column: 1fr;
-        grid-template-rows: 1fr 4fr;
+        grid-template-rows: 4rem 4fr;
         padding-left: 1rem;
         padding-right: 1rem;
 
