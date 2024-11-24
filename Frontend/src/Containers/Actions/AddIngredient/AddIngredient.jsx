@@ -4,6 +4,7 @@ import { useMutation } from "@apollo/client"
 import { useDispatch } from "react-redux"
 import { addPopup, clearPopup } from "@Redux/Slices/PopupSlice"
 import { CreateIngredient } from "@Mutation/CreateIngredient"
+import { addIngredient } from "../../../Physics/Redux/Slices/NutritionSlice"
 
 export default function AddIngredient(){
 
@@ -42,12 +43,12 @@ export default function AddIngredient(){
                 setLipid("")
                 setGlucid("")
                 dispatch(addPopup(response))
+                dispatch(addIngredient(response.ingredient))
             }
         })
     }
 
     useEffect(() => {
-        console.log(glucid)
         if(
             name
             && calorie
