@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import s from "./AddIngredient.module.scss"
 import { useMutation } from "@apollo/client"
-import { CreateIngredient } from "@Query/Mutation/CreateIngredient"
 import { useDispatch } from "react-redux"
 import { addPopup, clearPopup } from "@Redux/Slices/PopupSlice"
+import { CreateIngredient } from "@Mutation/CreateIngredient"
 
 export default function AddIngredient(){
 
@@ -102,7 +102,7 @@ export default function AddIngredient(){
                 
             
                 <div className={s.submitContainer}>
-                    <input disabled={!validForm} className={validForm ? s.active : ""} type="submit" value={"Enregistrer"} />
+                    <input disabled={!validForm} className={validForm ? s.active : s.inactive} type="submit" value={"Enregistrer"} />
                 </div>
             </form>
 

@@ -14,10 +14,11 @@ export default defineConfig({
       "@Layout":path.resolve(__dirname, "./src/Layout"),
       "@Pages":path.resolve(__dirname, "./src/Pages"),
 
-      // "@Physics":path.resolve(__dirname, "./src/Physics/"),
+      "@Physics":path.resolve(__dirname, "./src/Physics/"),
       "@Sass":path.resolve(__dirname, "./src/Physics/Sass"),
       "@Redux":path.resolve(__dirname, "./src/Physics/Redux"),
-      "@Query":path.resolve(__dirname, "./src/Physics/Query"),
+      "@Query":path.resolve(__dirname, "./src/Physics/GraphQL/Query"),
+      "@Mutation":path.resolve(__dirname, "./src/Physics/GraphQL/Mutation"),
       "@Services":path.resolve(__dirname, "./src/Physics/Services"),
       "@Utils":path.resolve(__dirname, "./src/Physics/Utils"),
       "@Constants":path.resolve(__dirname, "./src/Physics/Constants"),
