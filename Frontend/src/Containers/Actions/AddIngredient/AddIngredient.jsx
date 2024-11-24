@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import s from "./AddIngredient.module.scss"
 import { useMutation } from "@apollo/client"
 import { CreateIngredient } from "@Query/Mutation/CreateIngredient"
@@ -15,6 +15,7 @@ export default function AddIngredient(){
     const [protein, setProtein] = useState("")
     const [lipid, setLipid] = useState("")
     const [glucid, setGlucid] = useState("")
+    const [validForm, setValidForm] = useState(false)
 
     const [createIngredient, {data, loading, error}] = useMutation(CreateIngredient)
 
@@ -40,10 +41,26 @@ export default function AddIngredient(){
                 setProtein("")
                 setLipid("")
                 setGlucid("")
+                dispatch(addPopup(response))
             }
-            dispatch(addPopup(response))
         })
     }
+
+    useEffect(() => {
+        console.log(glucid)
+        if(
+            name
+            && calorie
+            && weight
+            && protein
+            && lipid
+            && glucid
+        ){
+            setValidForm(true)
+        }else{
+            setValidForm(false)
+        }
+    }, [name, calorie, weight, protein, lipid, glucid])
 
     return(
         <div className={s.container}>
@@ -85,22 +102,10 @@ export default function AddIngredient(){
                 
             
                 <div className={s.submitContainer}>
-                    {/* <i className="fa-solid fa-floppy-disk"></i> */}
-                    <input type="submit" value={"Enregistrer"} />
+                    <input disabled={!validForm} className={validForm ? s.active : ""} type="submit" value={"Enregistrer"} />
                 </div>
             </form>
 
-
-
-
-
-
-            {/* <Button onClick={() => console.log("controle")}>
-                <i className="fa-solid fa-floppy-disk"></i>
-                <span>
-                    Enregistrer
-                </span>
-            </Button> */}
         </div>
     )
 }
